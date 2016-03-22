@@ -53,7 +53,7 @@ abstract class Base implements \JsonSerializable
 
         $type = self::PROPERTY_STATIC;
         if (isset($arguments[1])) {
-            if (in_array($arguments[1], [self::PROPERTY_STATIC, self::PROPERTY_BINDABLE]) == false) {
+            if (in_array($arguments[1], [self::PROPERTY_STATIC, self::PROPERTY_BINDABLE]) === false) {
                 throw new \Exception("{$arguments[1]} not accepted as type, valid options are 'static' or 'bindable'");
             }
             $type = $arguments[1];

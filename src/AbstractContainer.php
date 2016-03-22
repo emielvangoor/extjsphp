@@ -24,7 +24,7 @@ abstract class AbstractContainer extends AbstractComponent
      */
     public function add(AbstractComponent $item)
     {
-        if ($this->getProperty('items') == null) {
+        if ($this->getProperty('items') === null) {
             $this->setProperty('items', [$item]);
 
             return $this;

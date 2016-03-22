@@ -40,9 +40,7 @@ class Border extends AbstractContainer
     protected $layout = 'border';
 
     /**
-     * Returns the layout type
-     *
-     * @return string
+     * {@inheritdoc}
      */
     public function jsonSerialize() {
         return $this->layout;
