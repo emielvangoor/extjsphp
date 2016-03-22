@@ -7,7 +7,6 @@ class TabPanel extends Panel
     protected $xtype = 'tabpanel';
 
     /**
-     * @param string $title
      * @param Panel[] $items
      */
     public function __construct($items = [])
