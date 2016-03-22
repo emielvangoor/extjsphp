@@ -1,7 +1,8 @@
 {
-    "name": "emielvangoor/extjsphp",
+    "name": "bonsa/extjsphp",
     "description": "Create ExtJS interfaces from PHP",
-    "type": "PHP",
+    "type": "project",
+    "keywords": ["php", "extjs", "sencha"],
     "require-dev": {
         "phpunit/phpunit": "^5.2"
     },
@@ -11,5 +12,10 @@
             "email": "emielvangoor@me.com"
         }
     ],
-    "require": {}
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Bonsa\\Extphp\\":  "src/"
+        }
+    }
 }
