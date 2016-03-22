@@ -20,12 +20,39 @@ namespace Bonsa\Extphp;
  * @method string getXtype() Gets the xtype
  *
  * @method AbstractComponent setHtml(string $html) Sets the HTML
+ *
+ * @method AbstractComponent setScrollable($scroll = self::SCROLL_DISABLED) [self::SCROLL_AUTO, self::SCROLL_DISABLED, self::SCROLL_X, self::SCROLL_Y]
  */
 abstract class AbstractComponent extends Base
 {
     use Layout\Container\Border\BorderTrait;
     use Layout\Container\Box\BoxTrait;
     use Mixin\BindableTrait;
+
+    /**
+     * Auto scrolling
+     * @var bool
+     */
+    const SCROLL_AUTO = true;
+
+    /**
+     * Disabled scrolling
+     * @default
+     * @var bool
+     */
+    const SCROLL_DISABLED = false;
+
+    /**
+     * X axis scrolling
+     * @var string
+     */
+    const SCROLL_X = 'x';
+
+    /**
+     * Y axis scrolling
+     * @var string
+     */
+    const SCROLL_Y = 'y';
 
     /**
      * @var string
