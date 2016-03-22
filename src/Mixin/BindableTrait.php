@@ -22,7 +22,7 @@ trait BindableTrait
      */
     public function getViewModel()
     {
-        if ($this->viewModel == null) {
+        if ($this->viewModel === null) {
             $this->setViewModel(new ViewModel);
         }
 

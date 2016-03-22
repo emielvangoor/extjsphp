@@ -9,6 +9,8 @@
       "email": "emielvangoor@me.com"
     }
   ],
+  "license": "MIT",
+
   "require": {
     "php": ">=5.6"
   },

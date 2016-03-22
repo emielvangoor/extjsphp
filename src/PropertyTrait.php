@@ -87,11 +87,11 @@ trait PropertyTrait
     {
         $name = lcfirst($name);
 
-        if (in_array($name, $this->valid_properties) == false) {
+        if (in_array($name, $this->valid_properties) === false) {
             throw new \Exception("{$name} is not a valid property, valid properties are: " . implode(", ", $this->valid_properties));
         }
 
-        if ($bindable == false) {
+        if ($bindable === false) {
             $this->properties[self::$PROPERTY_STATIC][$name] = $value;
         } else {
             $this->properties[self::$PROPERTY_BINDABLE][$name] = $value;

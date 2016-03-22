@@ -7,4 +7,5 @@ namespace Bonsa\Extphp\Layout\Container\Border;
  *
  * @method BorderTrait setRegion(string $region) Set the region of the container
  */
-trait BorderTrait { }
+trait BorderTrait {
+}

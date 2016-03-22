@@ -24,7 +24,7 @@ abstract class AbstractContainer extends AbstractComponent
      */
     public function add(AbstractComponent $item)
     {
-        if (array_key_exists('items', $this->properties[self::$PROPERTY_STATIC]) == false) {
+        if (array_key_exists('items', $this->properties[self::$PROPERTY_STATIC]) === false) {
             $this->properties[self::$PROPERTY_STATIC]['items'] = [];
         }
 
