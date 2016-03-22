@@ -72,7 +72,7 @@ abstract class Base implements \JsonSerializable
 
     /**
      * returns the value of the given property
-     * @param $property
+     * @param string $property
      * @return string|null
      */
     public function getProperty($property)
