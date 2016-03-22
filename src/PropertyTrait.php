@@ -91,7 +91,7 @@ trait PropertyTrait
             throw new \Exception("{$name} is not a valid property, valid properties are: " . implode(", ", $this->valid_properties));
         }
 
-        if ($bindable === false) {
+        if ((bool)$bindable === false) {
             $this->properties[self::$PROPERTY_STATIC][$name] = $value;
         } else {
             $this->properties[self::$PROPERTY_BINDABLE][$name] = $value;
