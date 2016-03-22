@@ -1,5 +1,5 @@
 {
-    "name": "bonsa/extjsphp",
+    "name": "bonsa/extphp",
     "description": "Create ExtJS interfaces from PHP",
     "type": "project",
     "keywords": ["php", "extjs", "sencha"],
