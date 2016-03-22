@@ -1,7 +1,7 @@
-Bonsa ExtPHP 
+ExtPHP 
 ===========
-![Build status](https://travis-ci.org/emielvangoor/extphp.svg?branch=master)
+[![Build Status](https://travis-ci.org/emielvangoor/extphp.svg?branch=master)](https://travis-ci.org/emielvangoor/extphp)
 
-Create ExtJS interface from PHP
+Create ExtJS interfaces from PHP
 
 ## Do not use: In development
