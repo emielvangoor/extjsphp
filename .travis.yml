@@ -13,7 +13,7 @@ script: phpunit
 
 matrix:
   allow_failures:
-    - php: 7.0
+    - php: '7.0'
     - php: hhvm
     - php: nightly
   fast_finish: true
