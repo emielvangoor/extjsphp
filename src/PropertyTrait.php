@@ -65,7 +65,7 @@ trait PropertyTrait
 
                 return null;
             case 'set':
-                return $this->setProperty($property, $body, $bindable);
+                return $this->setProperty($property, $body, (bool)$bindable);
                 break;
 
             default:
