@@ -4,7 +4,7 @@ namespace Bonsa\Extphp;
 
 use Bonsa\Extphp\Panel\Panel;
 
-class PropertyTraitTest extends \PHPUnit_Framework_TestCase
+class BaseTest extends \PHPUnit_Framework_TestCase
 {
     function testSetProperty()
     {
@@ -17,7 +17,7 @@ class PropertyTraitTest extends \PHPUnit_Framework_TestCase
         $panel->setProperty("CollapseDirection", 'value2');
 
         // Bind properties
-        $panel->setProperty("title", 'stringy', true);
+        $panel->setProperty("title", 'stringy', Panel::PROPERTY_BINDABLE);
 
         $expected = [
             'xtype' => 'panel',

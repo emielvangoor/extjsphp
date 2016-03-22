@@ -21,11 +21,10 @@ namespace Bonsa\Extphp;
  *
  * @method AbstractComponent setHtml(string $html) Sets the HTML
  */
-abstract class AbstractComponent implements \JsonSerializable
+abstract class AbstractComponent extends Base
 {
     use Layout\Container\Border\BorderTrait;
     use Layout\Container\Box\BoxTrait;
-    use PropertyTrait;
     use Mixin\BindableTrait;
 
     /**
@@ -54,6 +53,7 @@ abstract class AbstractComponent implements \JsonSerializable
     public function initComponent()
     {
         $this->setValidProperties($this->getClassProperties());
+
         $this->setXtype($this->xtype);
 
         // Set the options

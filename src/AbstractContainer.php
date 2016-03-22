@@ -6,7 +6,7 @@ namespace Bonsa\Extphp;
  * Class AbstractContainer
  * @package Bonsa\Extphp
  *
- * @method AbstractContainer setLayout(LayoutContainer $layout) Set the layout
+ * @method AbstractContainer setLayout(\Bonsa\Extphp\Layout\AbstractLayout $layout) Set the layout
  */
 abstract class AbstractContainer extends AbstractComponent
 {
@@ -24,11 +24,13 @@ abstract class AbstractContainer extends AbstractComponent
      */
     public function add(AbstractComponent $item)
     {
-        if (array_key_exists('items', $this->properties[self::$PROPERTY_STATIC]) === false) {
-            $this->properties[self::$PROPERTY_STATIC]['items'] = [];
+        if ($this->getProperty('items') == null) {
+            $this->setProperty('items', [$item]);
+
+            return $this;
         }
 
-        $this->properties[self::$PROPERTY_STATIC]['items'][] = $item;
+        $this->setProperty('items', array_merge($this->getProperty('items'), [$item]));
 
         return $this;
     }

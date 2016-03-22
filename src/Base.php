@@ -3,10 +3,10 @@
 namespace Bonsa\Extphp;
 
 /**
- * Class PropertyTrait
+ * Class Base
  * @package Bonsa\Extphp
  */
-trait PropertyTrait
+abstract class Base implements \JsonSerializable
 {
     /**
      * Contains the list of valid properties
@@ -18,61 +18,66 @@ trait PropertyTrait
      * @var array
      */
     protected $properties = [
-        'static' => [],
-        'bindable' => [],
+        self::PROPERTY_STATIC => [],
+        self::PROPERTY_BINDABLE => [],
     ];
 
     /**
-     * Defines static property
+     * Defines a static type
      * @var string
      */
-    static protected $PROPERTY_STATIC = 'static';
+    const PROPERTY_STATIC = 'static';
 
     /**
-     * Defines a bindable property
+     * Defines a bindable typ
      * @var string
      */
-    static protected $PROPERTY_BINDABLE = 'bindable';
+    const PROPERTY_BINDABLE = 'bindable';
 
     /**
      * Magic property setting
      *
-     * @example
-     * // None bindable
-     * $panel->setCls('My name');
-     * // Bindable
-     * $panel->setTitle('My name', true);
-     *
      * @param string $name
      * @param array $arguments
-     * @throw \Exception
-     * @return mixed|self Will return self for set* and will return mixed on get*
+     * @throws \Exception
+     * @return Base Will return self for set* and will return mixed on get*
      */
     public function __call($name, array $arguments)
     {
         $property = lcfirst(substr($name, 3));
 
-        list($body, $bindable) = array_merge($arguments, ['', false]);
+        $body = "";
+        if (isset($arguments[0])) {
+            $body = $arguments[0];
+        }
+
+        $type = self::PROPERTY_STATIC;
+        if (isset($arguments[1])) {
+            if (in_array($arguments[1], [self::PROPERTY_STATIC, self::PROPERTY_BINDABLE]) == false) {
+                throw new \Exception("{$arguments[1]} not accepted as type, valid options are 'static' or 'bindable'");
+            }
+            $type = $arguments[1];
+        }
 
         switch(substr($name, 0, 3))
         {
             case 'get':
-                return $this->getProperty($property);
+                return $this->getproperty($property);
             case 'set':
-                return $this->setProperty($property, $body, (bool)$bindable);
+                return $this->setproperty($property, $body, $type);
             default:
-                throw new \Exception("Not a valid function call on " . get_class($this));
+                throw new \InvalidArgumentException("{$name} not valid");
         }
     }
 
     /**
-     * Returns the value of the given property
+     * returns the value of the given property
      * @param $property
-     * @return string
+     * @return string|null
      */
     public function getProperty($property)
     {
-        foreach ([self::$PROPERTY_STATIC, self::$PROPERTY_BINDABLE] as $type) {
+        foreach ([self::PROPERTY_STATIC, self::PROPERTY_BINDABLE] as $type) {
             if (array_key_exists($property, $this->properties[$type])) {
                 return $this->properties[$type][$property];
             }
@@ -88,22 +93,21 @@ trait PropertyTrait
      *
      * @param string $name The name of the property
      * @param mixed $value the property values
-     * @param bool $bindable Is the value bind to the viewmodel
+     * @param string $type
      * @return AbstractComponent
+     * @throws \Exception
      */
-    public function setProperty($name, $value, $bindable = false)
+    public function setProperty($name, $value, $type = self::PROPERTY_STATIC)
     {
         $name = lcfirst($name);
 
         if (in_array($name, $this->valid_properties) === false) {
-            throw new \Exception("{$name} is not a valid property, valid properties are: " . implode(", ", $this->valid_properties));
+            throw new \Exception(
+                "{$name} is not a valid property, valid properties are: " . implode(", ", $this->valid_properties)
+            );
         }
 
-        if ((bool)$bindable === false) {
-            $this->properties[self::$PROPERTY_STATIC][$name] = $value;
-        } else {
-            $this->properties[self::$PROPERTY_BINDABLE][$name] = $value;
-        }
+        $this->properties[$type][$name] = $value;
 
         return $this;
     }
@@ -113,8 +117,8 @@ trait PropertyTrait
      */
     public function getProperties()
     {
-        $data = $this->properties[self::$PROPERTY_STATIC];
-        $bindableProperties = $this->properties[self::$PROPERTY_BINDABLE];
+        $data = $this->properties[self::PROPERTY_STATIC];
+        $bindableProperties = $this->properties[self::PROPERTY_BINDABLE];
         if (sizeof($bindableProperties) != 0) {
             $data['bind'] = $bindableProperties;
         }
@@ -141,9 +145,9 @@ trait PropertyTrait
         $matchReg = '/@method\s+[a-zA-Z]+\s+set([a-zA-Z]+)\(/';
         $properties = [];
 
-        $doc_matches = [];
-        preg_match_all($matchReg, $class->getDocComment(), $doc_matches);
-        $properties = array_merge($properties, array_map("lcfirst", $doc_matches[1]));
+        $docMatches = [];
+        preg_match_all($matchReg, $class->getDocComment(), $docMatches);
+        $properties = array_merge($properties, array_map("lcfirst", $docMatches[1]));
 
         // Get properties of any traits
         foreach ($class->getTraits() as $trait)

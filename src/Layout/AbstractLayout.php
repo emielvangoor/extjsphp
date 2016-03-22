@@ -2,7 +2,7 @@
 
 namespace Bonsa\Extphp\Layout;
 
-use Bonsa\Extphp\PropertyTrait;
+use Bonsa\Extphp\Base;
 
 /**
  * Class AbstractLayout
@@ -11,10 +11,8 @@ use Bonsa\Extphp\PropertyTrait;
  * @method AbstractLayout setType(string $layout) Sets the layout
  * @method string getLayout() Gets the layout
  */
-abstract class AbstractLayout implements \JsonSerializable
+abstract class AbstractLayout extends Base implements \JsonSerializable
 {
-    use PropertyTrait;
-
     /**
      * @var string
      */
