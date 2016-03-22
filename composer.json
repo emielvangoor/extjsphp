@@ -1,0 +1,15 @@
+{
+    "name": "emielvangoor/extjsphp",
+    "description": "Create ExtJS interfaces from PHP",
+    "type": "PHP",
+    "require-dev": {
+        "phpunit/phpunit": "^5.2"
+    },
+    "authors": [
+        {
+            "name": "Emiel van Goor",
+            "email": "emielvangoor@me.com"
+        }
+    ],
+    "require": {}
+}

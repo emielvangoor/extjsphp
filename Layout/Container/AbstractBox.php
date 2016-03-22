@@ -1,0 +1,38 @@
+<?php
+
+namespace EXB\Ui\Layout\Container;
+
+/**
+ * Class AbstractBox
+ * @package EXB\Ui\Layout\Container
+ *
+ * @method AbstractBox setAlign(string $align) Set the align of the container
+ * @method AbstractBox setPack(string $pack) Set the pack of the container
+ */
+abstract class AbstractBox extends AbstractContainer
+{
+    /**
+     * @var string
+     */
+    const ALIGN_BEGIN = 'begin';
+
+    /**
+     * @var string
+     */
+    const ALIGN_MIDDLE = 'middle';
+
+    /**
+     * @var string
+     */
+    const ALIGN_END = 'end';
+
+    /**
+     * @var string
+     */
+    const ALIGN_STRETCH = 'stretch';
+
+    /**
+     * @var string
+     */
+    const ALIGN_STRETCHMAX = 'stretchmax';
+}
