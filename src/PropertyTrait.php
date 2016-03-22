@@ -66,8 +66,6 @@ trait PropertyTrait
                 return null;
             case 'set':
                 return $this->setProperty($property, $body, (bool)$bindable);
-                break;
-
             default:
                 throw new \Exception("Not a valid function call on " . get_class($this));
         }
