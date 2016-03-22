@@ -8,6 +8,10 @@ namespace Bonsa\Extphp;
  */
 trait PropertyTrait
 {
+    /**
+     * Contains the list of valid properties
+     * @var array
+     */
     protected $valid_properties = [];
 
     /**
