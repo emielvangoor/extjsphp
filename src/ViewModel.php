@@ -38,7 +38,7 @@ class ViewModel implements \JsonSerializable
 
     public function jsonSerialize()
     {
-        if (sizeof($this->data) > 0) {
+        if ($this->hasData()) {
             return ['data' => $this->data];
         }
 
