@@ -1,6 +1,6 @@
 <?php
 
-namespace EXB\Ui\Layout\Container;
+namespace Bonsa\Ui\Layout\Container;
 
 /**
  * VBox layout

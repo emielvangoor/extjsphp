@@ -1,12 +1,12 @@
 <?php
 
-namespace EXB\Ui\Form;
+namespace Bonsa\Ui\Form;
 
-use EXB\Ui\AbstractContainer;
+use Bonsa\Ui\AbstractContainer;
 
 /**
  * Class Textfield
- * @package EXB\Ui\Form
+ * @package Bonsa\Ui\Form
  *
  * @method Textfield setValue($value, bool $bind) Set the value of the field
  * @method Textfield setName($name) Set the name of the field

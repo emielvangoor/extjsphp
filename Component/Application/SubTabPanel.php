@@ -1,8 +1,8 @@
 <?php
 
-namespace EXB\Ui\Component\Application;
+namespace Bonsa\Ui\Component\Application;
 
-use EXB\Ui\Panel\TabPanel;
+use Bonsa\Ui\Panel\TabPanel;
 
 class SubTabPanel extends TabPanel
 {

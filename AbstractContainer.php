@@ -1,12 +1,12 @@
 <?php
 
-namespace EXB\Ui;
+namespace Bonsa\Ui;
 
-use EXB\Ui\Layout\Container\AbstractContainer as LayoutContainer;
+use Bonsa\Ui\Layout\Container\AbstractContainer as LayoutContainer;
 
 /**
  * Class AbstractContainer
- * @package EXB\Ui
+ * @package Bonsa\Ui
  *
  * @method AbstractContainer setLayout(LayoutContainer $layout) Set the layout
  */

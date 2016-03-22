@@ -1,13 +1,13 @@
 <?php
 
-namespace EXB\Ui\Mixin;
+namespace Bonsa\Ui\Mixin;
 
-use EXB\Ui\AbstractComponent;
-use EXB\Ui\ViewModel;
+use Bonsa\Ui\AbstractComponent;
+use Bonsa\Ui\ViewModel;
 
 /**
  * Trait BindableTrait
- * @package EXB\Ui\Mixin
+ * @package Bonsa\Ui\Mixin
  *
  * @method BindableTrait setViewModel(ViewModel $vm) Set the viewmodel
  */

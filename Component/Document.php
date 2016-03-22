@@ -1,12 +1,12 @@
 <?php
 
-namespace EXB\Ui\Component;
+namespace Bonsa\Ui\Component;
 
-use EXB\Ui\Panel\Panel;
+use Bonsa\Ui\Panel\Panel;
 
 /**
  * Class Document
- * @package EXB\Ui\Component
+ * @package Bonsa\Ui\Component
  *
  * @method Document setDocumentId(int $id) The document id
  * @method Document setModuleId(int $moduleid) The module id

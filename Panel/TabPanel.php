@@ -1,6 +1,6 @@
 <?php
 
-namespace EXB\Ui\Panel;
+namespace Bonsa\Ui\Panel;
 
 class TabPanel extends Panel
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace EXB\Ui\Layout\Container\Box;
+namespace Bonsa\Ui\Layout\Container\Box;
 
-use EXB\Ui\AbstractComponent;
+use Bonsa\Ui\AbstractComponent;
 
 /**
  * For boxlayouts hbox and vbox

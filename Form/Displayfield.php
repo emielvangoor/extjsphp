@@ -1,8 +1,8 @@
 <?php
 
-namespace EXB\Ui\Form;
+namespace Bonsa\Ui\Form;
 
-use EXB\Ui\AbstractContainer;
+use Bonsa\Ui\AbstractContainer;
 
 class Displayfield extends Textfield
 {

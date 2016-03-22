@@ -1,10 +1,10 @@
 <?php
 
-namespace EXB\Ui\Layout\Container;
+namespace Bonsa\Ui\Layout\Container;
 
 /**
  * Class AbstractBox
- * @package EXB\Ui\Layout\Container
+ * @package Bonsa\Ui\Layout\Container
  *
  * @method AbstractBox setAlign(string $align) Set the align of the container
  * @method AbstractBox setPack(string $pack) Set the pack of the container

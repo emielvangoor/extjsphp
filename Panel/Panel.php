@@ -1,12 +1,12 @@
 <?php
 
-namespace EXB\Ui\Panel;
+namespace Bonsa\Ui\Panel;
 
-use EXB\Ui\AbstractContainer;
+use Bonsa\Ui\AbstractContainer;
 
 /**
  * Class Panel
- * @package EXB\Ui\Panel
+ * @package Bonsa\Ui\Panel
  *
  * @method Panel setTitle(string $title) Sets the title
  * @method Panel setCollapseDirection(string $title) Sets the collapse direction

@@ -1,6 +1,6 @@
 <?php
 
-namespace EXB\Ui;
+namespace Bonsa\Ui;
 
 /**
  * Base class for all components

@@ -1,8 +1,8 @@
 <?php
 
-namespace EXB\Ui\Layout\Container\Border;
+namespace Bonsa\Ui\Layout\Container\Border;
 
-use EXB\Ui\AbstractComponent;
+use Bonsa\Ui\AbstractComponent;
 
 /**
  * Provides @c Border layout capabilities for a  @c AbstractContainer panel

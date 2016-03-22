@@ -1,10 +1,10 @@
 <?php
 
-namespace EXB\Ui;
+namespace Bonsa\Ui;
 
 /**
  * Class PropertyTrait
- * @package EXB\Ui
+ * @package Bonsa\Ui
  */
 trait PropertyTrait
 {

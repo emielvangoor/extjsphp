@@ -1,12 +1,12 @@
 <?php
 
-namespace EXB\Ui\Layout;
+namespace Bonsa\Ui\Layout;
 
-use EXB\Ui\PropertyTrait;
+use Bonsa\Ui\PropertyTrait;
 
 /**
  * Class AbstractLayout
- * @package EXB\Ui\Layout
+ * @package Bonsa\Ui\Layout
  *
  * @method AbstractLayout setType(string $layout) Sets the layout
  * @method string getLayout() Gets the layout

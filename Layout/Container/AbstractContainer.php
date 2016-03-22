@@ -1,8 +1,8 @@
 <?php
 
-namespace EXB\Ui\Layout\Container;
+namespace Bonsa\Ui\Layout\Container;
 
-use EXB\Ui\Layout\AbstractLayout;
+use Bonsa\Ui\Layout\AbstractLayout;
 
 abstract class AbstractContainer extends AbstractLayout
 {

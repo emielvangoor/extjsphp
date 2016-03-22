@@ -1,12 +1,12 @@
 <?php
 
-namespace EXB\Ui\Resizer;
+namespace Bonsa\Ui\Resizer;
 
-use EXB\Ui\AbstractContainer;
+use Bonsa\Ui\AbstractContainer;
 
 /**
  * Class Splitter
- * @package EXB\Ui\Resizer
+ * @package Bonsa\Ui\Resizer
  *
  * @method Splitter setCollapseTarget(string $target) Sets the collapse target
  * @method Splitter setCollapsible(bool $collapsible) Sets the collapsible flag
