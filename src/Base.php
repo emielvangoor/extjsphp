@@ -59,8 +59,7 @@ abstract class Base implements \JsonSerializable
             $type = $arguments[1];
         }
 
-        switch(substr($name, 0, 3))
-        {
+        switch (substr($name, 0, 3)) {
             case 'get':
                 return $this->getproperty($property);
             case 'set':
@@ -150,8 +149,7 @@ abstract class Base implements \JsonSerializable
         $properties = array_merge($properties, array_map("lcfirst", $docMatches[1]));
 
         // Get properties of any traits
-        foreach ($class->getTraits() as $trait)
-        {
+        foreach ($class->getTraits() as $trait) {
             $properties = array_merge($properties, $this->matchProperties($trait));
         }
 
