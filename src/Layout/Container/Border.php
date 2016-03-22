@@ -41,6 +41,8 @@ class Border extends AbstractContainer
 
     /**
      * Returns the layout type
+     *
+     * @return string
      */
     public function jsonSerialize() {
         return $this->layout;

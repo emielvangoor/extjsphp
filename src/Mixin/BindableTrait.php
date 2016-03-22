@@ -26,6 +26,7 @@ trait BindableTrait
             $this->setViewModel(new ViewModel);
         }
 
-        return $this->properties[self::$PROPERTY_STATIC]['viewModel'];
+        /** @var $this \Bonsa\Extphp\AbstractContainer  */
+        $this->getProperty('viewModel');
     }
 }

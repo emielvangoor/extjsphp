@@ -57,18 +57,28 @@ trait PropertyTrait
         switch(substr($name, 0, 3))
         {
             case 'get':
-                foreach ([self::$PROPERTY_STATIC, self::$PROPERTY_BINDABLE] as $type) {
-                    if (array_key_exists($property, $this->properties[$type])) {
-                        return $this->properties[$type][$property];
-                    }
-                }
-
-                return null;
+                return $this->getProperty($property);
             case 'set':
                 return $this->setProperty($property, $body, (bool)$bindable);
             default:
                 throw new \Exception("Not a valid function call on " . get_class($this));
         }
+    }
+
+    /**
+     * Returns the value of the given property
+     * @param $property
+     * @return string
+     */
+    public function getProperty($property)
+    {
+        foreach ([self::$PROPERTY_STATIC, self::$PROPERTY_BINDABLE] as $type) {
+            if (array_key_exists($property, $this->properties[$type])) {
+                return $this->properties[$type][$property];
+            }
+        }
+
+        return null;
     }
 
     /**
