@@ -2,8 +2,6 @@
 
 namespace Bonsa\Extphp;
 
-use Bonsa\Extphp\Layout\Container\AbstractContainer as LayoutContainer;
-
 /**
  * Class AbstractContainer
  * @package Bonsa\Extphp

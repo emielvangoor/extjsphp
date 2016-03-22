@@ -2,7 +2,6 @@
 
 namespace Bonsa\Extphp\Mixin;
 
-use Bonsa\Extphp\AbstractComponent;
 use Bonsa\Extphp\ViewModel;
 
 /**
