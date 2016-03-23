@@ -12,7 +12,10 @@ abstract class Base implements \JsonSerializable
      * Contains the list of valid properties
      * @var array
      */
-    protected $valid_properties = [];
+    private $valid_properties = [
+        // TODO This is a property of the @c BindableTrait
+        'bind'
+    ];
 
     /**
      * @var array
@@ -63,6 +66,13 @@ abstract class Base implements \JsonSerializable
             case 'get':
                 return $this->getproperty($property);
             case 'set':
+                if ($property == 'bind' && is_array($body)) {
+                    foreach ($body as $prop=>$value) {
+                        $this->setproperty($prop, $value, self::PROPERTY_BINDABLE);
+                    }
+                    return $this;
+                }
+
                 return $this->setproperty($property, $body, $type);
             default:
                 throw new \InvalidArgumentException("{$name} not valid");

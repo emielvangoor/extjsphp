@@ -35,4 +35,19 @@ abstract class AbstractBox extends AbstractContainer
      * @var string
      */
     const ALIGN_STRETCHMAX = 'stretchmax';
+
+    /**
+     * @var string
+     */
+    const PACK_START = 'start';
+
+    /**
+     * @var string
+     */
+    const PACK_CENTER = 'center';
+
+    /**
+     * @var string
+     */
+    const PACK_END = 'end';
 }

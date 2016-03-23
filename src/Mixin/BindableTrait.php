@@ -8,7 +8,7 @@ use Bonsa\Extphp\ViewModel;
  * Trait BindableTrait
  * @package Bonsa\Extphp\Mixin
  *
- * @method BindableTrait setViewModel(ViewModel $vm) Set the viewmodel
+ * @method BindableTrait setReference(string $reference) Set the reference name
  */
 trait BindableTrait
 {
@@ -22,11 +22,26 @@ trait BindableTrait
      */
     public function getViewModel()
     {
+        /** @var $this \Bonsa\Extphp\AbstractContainer  */
         if ($this->viewModel === null) {
-            $this->setViewModel(new ViewModel);
+            $this->setProperty('viewModel', new ViewModel);
         }
 
-        /** @var $this \Bonsa\Extphp\AbstractContainer  */
-        $this->getProperty('viewModel');
+        return $this->getProperty('viewModel');
+    }
+
+    /**
+     * @param array $data
+     * @return ViewModel
+     */
+    public function setViewModel(array $data) {
+        $this->setValidProperties(['viewModel']);
+        $vm = $this->getViewModel();
+
+        foreach ($data as $key=>$value) {
+            $vm->set($key, $value);
+        }
+
+        return $vm;
     }
 }

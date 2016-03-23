@@ -9,18 +9,17 @@ namespace Bonsa\Extphp;
  * @method AbstractComponent setCls(string $name) Sets the css class of the component
  * @method string getCls() Get the css class of the component
  *
- * @method AbstractComponent setWidth(int $width, bool $bind) Sets the width of the component
+ * @method AbstractComponent setWidth(int $width, bool $bind = false) Sets the width of the component
  * @method int getWidth() Gets the width of the component
  *
- * @method AbstractComponent setHeight(int $height, bool $bind) Sets the height of the component
+ * @method AbstractComponent setHeight(int $height, bool $bind = false) Sets the height of the component
  * @method string getHeight() Gets the height of the component
- *
  *
  * @method AbstractComponent setXtype(string $xtype) Sets the xtype
  * @method string getXtype() Gets the xtype
  *
  * @method AbstractComponent setHtml(string $html) Sets the HTML
- *
+ * @method AbstractComponent setBorder(bool $border) [true, false] Set the border
  * @method AbstractComponent setScrollable($scroll = self::SCROLL_DISABLED) [self::SCROLL_AUTO, self::SCROLL_DISABLED, self::SCROLL_X, self::SCROLL_Y]
  */
 abstract class AbstractComponent extends Base
@@ -83,7 +82,6 @@ abstract class AbstractComponent extends Base
 
         $this->setXtype($this->xtype);
 
-        // Set the options
         foreach ($this->config as $option => $value) {
             call_user_func([$this, "set" . ucfirst($option)], $value);
         }

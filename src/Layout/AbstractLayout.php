@@ -20,10 +20,15 @@ abstract class AbstractLayout extends Base implements \JsonSerializable
 
     /**
      * AbstractLayout constructor
+     * @param array $options
      */
-    public function __construct()
+    public function __construct(array $options = [])
     {
         $this->setValidProperties($this->getClassProperties());
         $this->setType($this->layout);
+
+        foreach ($options as $option => $value) {
+            call_user_func([$this, "set" . ucfirst($option)], $value);
+        }
     }
 }

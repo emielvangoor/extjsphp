@@ -1,21 +1,26 @@
-/**
- * This class is the controller for the main view for the application. It is specified as
- * the "controller" of the Main view class.
- *
- * TODO - Replace this content of this view to suite the needs of your application.
- */
 Ext.define('extphp.view.main.MainController', {
     extend: 'Ext.app.ViewController',
-
     alias: 'controller.main',
 
-    onItemSelected: function (sender, record) {
-        Ext.Msg.confirm('Confirm', 'Are you sure?', 'onConfirm', this);
+    onSampleChange: function() {
+        var sample = this.lookupReference('sample') ;
+
+        this.load(sample.getValue());
     },
 
-    onConfirm: function (choice) {
-        if (choice === 'yes') {
-            //
-        }
+    load: function(sample) {
+        var vm = this.getViewModel();
+        Ext.Ajax.request({
+            url: '../' + sample + '.php',
+            scope: this,
+            success: function (xhr) {
+                var data = Ext.decode(xhr.responseText);
+
+                Ext.suspendLayouts();
+                this.view.removeAll();
+                this.view.add(data);
+                Ext.resumeLayouts(true);
+            }
+        });
     }
 });

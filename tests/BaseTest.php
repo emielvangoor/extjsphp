@@ -2,6 +2,7 @@
 
 namespace Bonsa\Extphp;
 
+use Bonsa\Extphp\Form\Field\Text;
 use Bonsa\Extphp\Panel\Panel;
 
 class BaseTest extends \PHPUnit_Framework_TestCase
@@ -29,9 +30,39 @@ class BaseTest extends \PHPUnit_Framework_TestCase
         ];
 
         $output = json_encode($panel);
+        $this->assertEquals($expected, json_decode($output, true));
+    }
 
-        $this->assertJson($output);
-        $this->assertEquals(json_encode($expected), $output);
+    public function testBindConfig()
+    {
+        $expected = [
+            'xtype' => 'panel',
+            'bind' => [
+                'title' => 'stringy'
+            ]
+        ];
+
+        $panel = new Panel([
+            'bind' => [
+                'title' => 'stringy'
+            ]
+        ]);
+
+        $this->assertEquals($expected, json_decode(json_encode($panel), true));
+    }
+
+    public function testBindCouldBeString()
+    {
+        $expected = [
+            'xtype' => 'textfield',
+            'bind' => "{title}",
+        ];
+
+        $panel = new Text([
+            'bind' => "{title}"
+        ]);
+
+        $this->assertEquals($expected, json_decode(json_encode($panel), true));
     }
 
     /**
