@@ -1,3 +1,5 @@
 vendor/
 composer.lock
 *.un~
+examples/ext/
+examples/build/
