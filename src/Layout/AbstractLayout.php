@@ -28,7 +28,7 @@ abstract class AbstractLayout extends Base implements \JsonSerializable
         $this->setType($this->layout);
 
         foreach ($options as $option => $value) {
-            call_user_func([$this, "set" . ucfirst($option)], $value);
+            call_user_func([$this, "set".ucfirst($option)], $value);
         }
     }
 }

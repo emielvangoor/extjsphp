@@ -112,7 +112,7 @@ abstract class Base implements \JsonSerializable
 
         if (in_array($name, $this->valid_properties) === false) {
             throw new \Exception(
-                "{$name} is not a valid property, valid properties are: " . implode(", ", $this->valid_properties)
+                "{$name} is not a valid property, valid properties are: ".implode(", ", $this->valid_properties)
             );
         }
 

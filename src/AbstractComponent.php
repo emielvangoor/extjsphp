@@ -83,7 +83,7 @@ abstract class AbstractComponent extends Base
         $this->setXtype($this->xtype);
 
         foreach ($this->config as $option => $value) {
-            call_user_func([$this, "set" . ucfirst($option)], $value);
+            call_user_func([$this, "set".ucfirst($option)], $value);
         }
     }
 }

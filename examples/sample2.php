@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__ . '/../vendor/autoload.php';
+require __DIR__.'/../vendor/autoload.php';
 
 use Bonsa\Extphp\Layout\Container\Vbox;
 use Bonsa\Extphp\Panel\Panel;
