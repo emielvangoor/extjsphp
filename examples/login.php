@@ -5,7 +5,6 @@ require __DIR__.'/../vendor/autoload.php';
 use Bonsa\Extphp\Form\Field\Text;
 use Bonsa\Extphp\Layout\Container\Center;
 use Bonsa\Extphp\Panel\Panel;
-use Bonsa\Extphp\ViewModel;
 
 class LoginPanel extends Panel
 {
