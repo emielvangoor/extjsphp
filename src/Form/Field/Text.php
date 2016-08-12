@@ -6,6 +6,7 @@ use Bonsa\Extphp\AbstractContainer;
 
 /**
  * Class Text
+ *
  * @package Bonsa\Extphp\Form\Field
  *
  * @method Text setValue($value, bool $bind) Set the value of the field
