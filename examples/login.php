@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__ . '/../vendor/autoload.php';
+require __DIR__.'/../vendor/autoload.php';
 
 use Bonsa\Extphp\Form\Field\Text;
 use Bonsa\Extphp\Layout\Container\Center;
