@@ -27,7 +27,10 @@ trait BindableTrait
             $this->setProperty('viewModel', new ViewModel);
         }
 
-        return $this->getProperty('viewModel');
+        /** @var $vm ViewModel */
+        $vm = $this->getProperty('viewModel');
+
+        return $vm;
     }
 
     /**
@@ -36,6 +39,7 @@ trait BindableTrait
      */
     public function setViewModel(array $data) {
         $this->setValidProperties(['viewModel']);
+
         $vm = $this->getViewModel();
 
         foreach ($data as $key=>$value) {
