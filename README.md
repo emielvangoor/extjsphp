@@ -6,4 +6,6 @@ ExtPHP
 
 Create ExtJS objects from PHP
 
+Run examples: `php -S localhost:8080 -t examples/`
+
 ## Do not use: This library is a work in progress

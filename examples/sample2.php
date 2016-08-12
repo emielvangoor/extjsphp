@@ -1,5 +1,7 @@
 <?php
 
+namespace Bonsa;
+
 require __DIR__.'/../vendor/autoload.php';
 
 use Bonsa\Extphp\Layout\Container\Vbox;

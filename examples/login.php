@@ -1,5 +1,7 @@
 <?php
 
+namespace Bonsa;
+
 require __DIR__.'/../vendor/autoload.php';
 
 use Bonsa\Extphp\Form\Field\Text;
@@ -35,4 +37,4 @@ class LoginPanel extends Panel
     }
 }
 
-echo json_encode(new LoginPanel());
+echo json_encode(new LoginPanel);
